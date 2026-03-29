@@ -91,6 +91,7 @@
             "entity_number_input_capapility": "Homey-Capability / GUI-Steuerung",
             "entity_number_input_capapility_dim": "dim (Schieberegler-Steuerung)",
             "entity_number_input_capapility_target_temperature": "target_temperature (Thermostat-Steuerung)",
+            "entity_number_input_subcapability": "Subcapability (optional, um mehr als eine Capability pro Typ hinzuzufügen)",
             "number_range_min": "Minimun",
             "number_range_max": "Maximaal",
             "number_range_step": "Schrittweite",

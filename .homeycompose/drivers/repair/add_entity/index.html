@@ -55,6 +55,7 @@
       add_as_number_input: document.getElementById('addEntityNumberInput').checked,
       number_input: {
         capability: document.getElementById('entityNumberCapabilityAdd').value,
+        // subcapability: document.getElementById('entityNumberSubcapabilityAdd').value,
         min: document.getElementById('entityNumberRangeMinAdd').value,      
         max: document.getElementById('entityNumberRangeMaxAdd').value,
         step: document.getElementById('entityNumberRangeStepAdd').value
@@ -330,6 +331,8 @@
               <option value="dim"                 data-i18n="repair.custom_device.entity_number_input_capapility_dim"></option>
               <option value="target_temperature"  data-i18n="repair.custom_device.entity_number_input_capapility_target_temperature"></option>
             </select>
+            <!-- <label for="entityNumberSubcapabilityAdd" class="homey-form-label no_top_margin"><span data-i18n="repair.custom_device.entity_number_input_subcapability"></span></label>
+            <input id="entityNumberSubcapabilityAdd"  class="homey-form-input" type="text" value=""/> -->
         </div>
         <div class="homey-form-group" id="divNumberInputRange">
           <table>

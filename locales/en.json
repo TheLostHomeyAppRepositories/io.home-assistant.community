@@ -90,6 +90,7 @@
             "entity_number_input_capapility": "Homey capability / GUI control",
             "entity_number_input_capapility_dim": "dim (Slider control)",
             "entity_number_input_capapility_target_temperature": "target_temperature (Thermostat control)",
+            "entity_number_input_subcapability": "Subcapability (optional, to add more than one capability per type)",
             "number_range_min": "Minimun",
             "number_range_max": "Maximum",
             "number_range_step": "Step",

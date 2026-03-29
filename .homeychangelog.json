@@ -690,6 +690,10 @@
   "1.15.0": {
     "en": "Added Homey Thermostat capability support for input_number entities.",
     "de": "Homey Thermostat-Capability-Unterstützung für input_number Entitaten hinzugefügt."
+  },
+  "1.15.1": {
+    "en": "Fixed subcapability issue for thermostat capability (input_number entities).",
+    "de": "Subcapability-Fehler bei Thermostat-Capability (input_number Entitäten) korrigiert."
   }
 
 }

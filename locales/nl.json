@@ -91,6 +91,7 @@
             "entity_number_input_capapility": "Homey-capability / GUI-bediening",
             "entity_number_input_capapility_dim": "dim (schuifregelaarbediening)",
             "entity_number_input_capapility_target_temperature": "target_temperature (thermostaatbediening)",
+            "entity_number_input_subcapability": "Subcapability (optioneel, om meer dan één capaciteit per type toe te voegen)",
             "number_range_min": "Minimun",
             "number_range_max": "Maximum",
             "number_range_step": "Verhoging",

@@ -823,13 +823,28 @@ class BaseDriver extends Homey.Driver {
             // Insert DIM capability for changeable number entities
             if (data.add_as_number_input == true){
                 if (data.entity_id.startsWith('number.') || data.entity_id.startsWith('input_number.')){
-                    let capabilityArray = capability.split(/\.(.*)/s);
-                    if (capabilityArray.length > 1 && data.number_input.capability == 'dim'){
-                        capability = data.number_input.capability + '.' + capabilityArray[1];                        
-                    }
-                    else{
+                    if (data.add_as_main_capability){
                         capability = data.number_input.capability;
                     }
+                    else{
+                        let capabilityArray = capability.split(/\.(.*)/s);
+                        if (capabilityArray.length > 1){
+                            let subcapability = capabilityArray[1];
+                            if (data.number_input.capability === 'target_temperature'){
+                                subcapability = subcapability.replace('.', '_');
+                            }
+                            capability = data.number_input.capability + '.' + subcapability;                        
+                        }
+                        else{
+                            capability = data.number_input.capability;
+                        }
+                    }
+                    // if (data.number_input.subcapability != undefined && data.number_input.subcapability != ''){
+                    //     capability = data.number_input.capability + '.' + data.number_input.subcapability;                        
+                    // }
+                    // else{
+                    //     capability = data.number_input.capability;
+                    // }
                     if (!isNaN(Number(data.number_input.min))){
                         capabilitiesOptions["min"] = Number(data.number_input.min);
                     }
@@ -852,7 +867,7 @@ class BaseDriver extends Homey.Driver {
 
             // Add decimals for number capability
             if (data.decimals != undefined){
-                if ( parseInt(data.decimals).par != NaN){
+                if ( !Number.isNaN(parseInt(data.decimals)) ){
                     capabilitiesOptions["decimals"] = parseInt(data.decimals);
                 }
             }
@@ -906,11 +921,12 @@ class BaseDriver extends Homey.Driver {
                     if (device.hasCapability("custom_hint")){
                         device.removeCapability("custom_hint");
                     }
+
+                    this.log("Capability added.");
                 }
                 catch(error){
                     this.log("Error adding capability "+capability+": "+error.message);
                 }
-                this.log("Capability added.");
                 
                 // Set energy options
                 if (data.energy && data.energy.capabilityOption != 'default'){
